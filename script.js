@@ -1,7 +1,9 @@
-const displayColorCode = document.querySelector('.color-code')
-const generate = document.querySelector('.generate')
-const colorCharacter = '0123456789abcdef'.split('')
-const lightShow = document.querySelector('.lightshow')
+const displayColorCode = document.querySelector('.color-code');
+const generate = document.querySelector('.generate');
+const colorCharacter = '0123456789abcdef'.split('');
+const lightShow = document.querySelector('.lightshow');
+const copyCode = document.querySelector('.copy-code');
+const copiedText = document.querySelector('.copied-text');
 
 
 function colorGenerator() {
@@ -23,8 +25,6 @@ generate.addEventListener('click', () => {
 
 });
 
-
-
 let intervalId; 
 
 lightShow.addEventListener('click', () => {
@@ -38,3 +38,16 @@ lightShow.addEventListener('click', () => {
     }, 100);
   }
 });
+
+copyCode.addEventListener('click', () => {
+  navigator.clipboard.writeText(displayColorCode.textContent)
+  .then (() => {
+    copiedText.textContent = 'copied'
+    setTimeout(() => {
+      copiedText.textContent = ''
+    }, 2000);
+  })
+   .catch (error => {
+      console.error('Failed to copy', error)
+   })
+})

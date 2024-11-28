@@ -25,12 +25,29 @@ p {
   margin: 0;
 }
 
-.color-code {
-  margin-bottom: 2rem;
-}
-
 button:hover {
   background-color: rgb(225, 225, 225);
   scale: 1.05;
 }
 
+.code-copy {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 0.3rem;
+    border-radius: 100rem;
+    background-color: white;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
